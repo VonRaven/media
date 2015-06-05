@@ -49,11 +49,11 @@ class ImageEditorPlugin extends AbstractComponentView {
 	 */
 	protected function getImageEditorUri() {
 		$urlParameters = array(
-			ModuleParameter::PREFIX => array(
+			ModuleParameter::getPrefix() => array(
 				'controller' => 'ImageEditor',
 				'action' => 'show',
 			),
 		);
-		return BackendUtility::getModuleUrl(ModuleParameter::MODULE_SIGNATURE, $urlParameters);
+		return BackendUtility::getModuleUrl(ModuleParameter::getSignature(), $urlParameters);
 	}
 }

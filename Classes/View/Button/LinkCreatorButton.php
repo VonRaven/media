@@ -52,12 +52,12 @@ class LinkCreatorButton extends AbstractComponentView {
 	 */
 	protected function getLinkCreatorUri(Content $object) {
 		$urlParameters = array(
-			ModuleParameter::PREFIX => array(
+			ModuleParameter::getPrefix() => array(
 				'controller' => 'LinkCreator',
 				'action' => 'show',
 				'file' => $object->getUid(),
 			),
 		);
-		return BackendUtility::getModuleUrl(ModuleParameter::MODULE_SIGNATURE, $urlParameters);
+		return BackendUtility::getModuleUrl(ModuleParameter::getSignature(), $urlParameters);
 	}
 }

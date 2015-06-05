@@ -15,14 +15,40 @@ namespace Fab\Media\Module;
  */
 
 use TYPO3\CMS\Core\Type\Enumeration;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Enumeration object for parameter module.
  */
 class ModuleParameter extends Enumeration {
 
-	const MODULE_SIGNATURE = 'user_MediaM1';
+	const SIGNATURE = 'file_VidiSysFileM1';
 
-	const PREFIX = 'tx_media_user_mediam1';
+	const SIGNATURE_HIDDEN_FOLDER_TREE = 'content_MediaM1';
+
+	const PREFIX = 'tx_vidi_file_vidisysfilem1';
+
+	const PREFIX_HIDDEN_FOLDER_TREE = 'tx_media_content_mediam1';
+
+	/**
+	 * @return string
+	 */
+	static public function getSignature(){
+		return self::getMediaModule()->hasFolderTree() ? self::SIGNATURE : self::SIGNATURE_HIDDEN_FOLDER_TREE;
+	}
+
+	/**
+	 * @return string
+	 */
+	static public function getPrefix(){
+		return self::getMediaModule()->hasFolderTree() ? self::PREFIX : self::PREFIX_HIDDEN_FOLDER_TREE;
+	}
+
+	/**
+	 * @return MediaModule
+	 */
+	static protected function getMediaModule() {
+		return GeneralUtility::makeInstance('Fab\Media\Module\MediaModule');
+	}
 
 }

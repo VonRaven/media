@@ -52,12 +52,12 @@ class ImageEditorButton extends AbstractComponentView {
 	 */
 	protected function getImageEditorUri(Content $object) {
 		$urlParameters = array(
-			ModuleParameter::PREFIX => array(
+			ModuleParameter::getPrefix() => array(
 				'controller' => 'ImageEditor',
 				'action' => 'show',
 				'file' => $object->getUid(),
 			),
 		);
-		return BackendUtility::getModuleUrl(ModuleParameter::MODULE_SIGNATURE, $urlParameters);
+		return BackendUtility::getModuleUrl(ModuleParameter::getSignature(), $urlParameters);
 	}
 }

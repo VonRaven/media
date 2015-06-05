@@ -47,11 +47,11 @@ class LinkCreatorPlugin extends AbstractComponentView {
 	 */
 	protected function getLinkCreatorUri() {
 		$urlParameters = array(
-			ModuleParameter::PREFIX => array(
+			ModuleParameter::getPrefix() => array(
 				'controller' => 'LinkCreator',
 				'action' => 'show',
 			),
 		);
-		return BackendUtility::getModuleUrl(ModuleParameter::MODULE_SIGNATURE, $urlParameters);
+		return BackendUtility::getModuleUrl(ModuleParameter::getSignature(), $urlParameters);
 	}
 }

@@ -14,6 +14,7 @@ namespace Fab\Media\Override\Backend\Form;
  * The TYPO3 project - inspiring people to share!
  */
 
+use Fab\Media\Module\ModuleParameter;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 
 /**
@@ -28,7 +29,8 @@ class FormEngine extends \TYPO3\CMS\Backend\Form\FormEngine {
 		$result = parent::JStop();
 		$result .= '
 <script>
-	var vidiModuleUrl = \'' . BackendUtility::getModuleUrl('user_VidiSysFileM1') . '\';
+	var vidiModuleUrl = \'' . BackendUtility::getModuleUrl(ModuleParameter::getSignature()) . '\';
+	var vidiModulePrefix = \'' . ModuleParameter::getPrefix() . '\';
 </script>
 		';
 		return $result;

@@ -59,7 +59,7 @@ if (TYPO3_MODE == 'BE') {
 
 	$defaultMainModule = 'file';
 	if ((bool)$configuration['hide_folder_tree']['value']) {
-		$defaultMainModule = 'user';
+		$defaultMainModule = 'content';
 	}
 
 	/** @var \Fab\Vidi\Module\ModuleLoader $moduleLoader */

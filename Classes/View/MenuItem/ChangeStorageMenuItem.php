@@ -43,13 +43,13 @@ class ChangeStorageMenuItem extends AbstractComponentView {
 	 */
 	protected function getChangeStorageUri() {
 		$urlParameters = array(
-			ModuleParameter::PREFIX => array(
+			ModuleParameter::getPrefix() => array(
 				'controller' => 'Asset',
 				'action' => 'editStorage',
 			),
 		);
 
-		return BackendUtility::getModuleUrl(ModuleParameter::MODULE_SIGNATURE, $urlParameters);
+		return BackendUtility::getModuleUrl(ModuleParameter::getSignature(), $urlParameters);
 	}
 
 }

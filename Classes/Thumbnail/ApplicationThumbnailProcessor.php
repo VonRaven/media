@@ -131,13 +131,13 @@ class ApplicationThumbnailProcessor extends AbstractThumbnailProcessor {
 	 */
 	protected function getUri() {
 		$urlParameters = array(
-			ModuleParameter::PREFIX => array(
+			ModuleParameter::getPrefix() => array(
 				'controller' => 'Asset',
 				'action' => 'download',
 				'file' => $this->getFile()->getUid(),
 			),
 		);
-		return BackendUtility::getModuleUrl(ModuleParameter::MODULE_SIGNATURE, $urlParameters);
+		return BackendUtility::getModuleUrl(ModuleParameter::getSignature(), $urlParameters);
 	}
 
 	/**

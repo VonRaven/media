@@ -52,12 +52,12 @@ class FilePickerButton extends AbstractComponentView {
 	 */
 	protected function getFilePickerUri(Content $object) {
 		$urlParameters = array(
-			ModuleParameter::PREFIX => array(
+			ModuleParameter::getPrefix() => array(
 				'controller' => 'Asset',
 				'action' => 'download',
 				'file' => $object->getUid(),
 			),
 		);
-		return BackendUtility::getModuleUrl(ModuleParameter::MODULE_SIGNATURE, $urlParameters);
+		return BackendUtility::getModuleUrl(ModuleParameter::getSignature(), $urlParameters);
 	}
 }

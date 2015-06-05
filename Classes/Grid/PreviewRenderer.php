@@ -83,13 +83,13 @@ class PreviewRenderer extends GridRendererAbstract {
 	 */
 	protected function getPluginUri($controllerName) {
 		$urlParameters = array(
-			ModuleParameter::PREFIX => array(
+			ModuleParameter::getPrefix() => array(
 				'controller' => $controllerName,
 				'action' => 'show',
 				'file' => $this->object->getUid(),
 			),
 		);
-		return BackendUtility::getModuleUrl(ModuleParameter::MODULE_SIGNATURE, $urlParameters);
+		return BackendUtility::getModuleUrl(ModuleParameter::getSignature(), $urlParameters);
 	}
 
 	/**

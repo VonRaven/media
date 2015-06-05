@@ -48,13 +48,13 @@ class FilePickerMenuItem extends AbstractComponentView {
 	 */
 	protected function getMassDeleteUri() {
 		$urlParameters = array(
-			ModuleParameter::PREFIX => array(
+			ModuleParameter::getPrefix() => array(
 				'controller' => 'Asset',
 				'action' => '',
 				'format' => 'json',
 			),
 		);
-		return BackendUtility::getModuleUrl(ModuleParameter::MODULE_SIGNATURE, $urlParameters);
+		return BackendUtility::getModuleUrl(ModuleParameter::getSignature(), $urlParameters);
 	}
 
 }
